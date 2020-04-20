@@ -1,34 +1,50 @@
-#include <iostream>
+include <iostream>
 #include <string.h>
 using namespace std;
-
-
-
-bool playorNot(char *OnHand, char *InHandCards){
+ 
+ 
+int faces(string *s, int num){
+    int i;
+    int x=0;
+    int y=0;
     
-    for (i=0, i>10, i++){
-        if (Ondeck[i]==InHand[i]){
-            retrun true;
+    for (i=0; i<num;i++){
+        if (s[i]=="Tetrahedron"){
+            x = 4;
         }
-        else 
-            return false;
+        else if (s[i]=="Cube"){
+            x=6;
+        }
+        else if (s[i]=="Octahedron"){
+            x=8;
+        }
+        else if (s[i]=="Dodecahedron"){
+            x=12;
+        }
+        else if (s[i]=="Icosahedron"){
+            x=20;
+        }
+    y = y + x;  
+    }  
+        
+    return y;
+}
+ 
+ 
+int main(){
+    int i;
+    int num={0};
+    int NumOfaces=0;
+    
+    cin>>num;
+    
+    string shapes[num];
+    
+    for (i=0; i<num;i++){
+        cin>>shapes[i];
     }
     
-}
-
-int main(){
-    
-    char OnDeck[2]={0};
-    char InHandCards[10]={0};
-    
-    cin>>OnDek;
-    
-    getine(cin, InHandCards);
-    
-    
+    NumOfaces = faces(shapes, num);
+    cout<<NumOfaces<<endl;
     
 }
-//    for (i=0; i<num;i++){
-//    cout<<shapes[i]<<endl;
-//    }
-//    
